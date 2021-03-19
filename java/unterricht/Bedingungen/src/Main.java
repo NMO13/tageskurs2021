@@ -60,12 +60,48 @@ public class Main {
         // Ein Schaltjahr ist ein Jahr, das durch 4 teilbar ohne Rest ist
         // Ein Jahr, das durch 100 ohne Rest teilbar ist, ist kein Schaltjahr...
         // ... es sei denn, das Jahr ist durch 400 teilbar, dann ist ein ein Schaltjahr
-        int year = 1904;
+        int year = 2100;
         boolean x1 = year % 4 == 0;
-        if(x1) {
-            System.out.println("Schaltjahr!");
+        if(year % 4 == 0) {
+            if(year % 100 == 0) {
+                if(year % 400 == 0) {
+                    System.out.println("Schaltjahr!");
+                } else {
+                    System.out.println("Kein Schaltjahr");
+                }
+            } else {
+                System.out.println("Schaltjahr");
+            }
+        }
+        else {
+                System.out.println("Kein Schaltjahr");
+            }
+
+        // SWITCH/CASE
+        String monat = "Januar";
+        switch(monat) {
+            case "Januar":
+                System.out.println("1. Quartal");
+                break;
+            case "Juni":
+                System.out.println("2. Quartal");
+                break;
+            case "Dezember":
+                System.out.println("4. Quartal");
+                break;
+            default:
+                System.out.println("Unbekannt");
+        }
+        // IF/ELSE Pendant
+        if(monat.equals("Januar")) {
+            System.out.println("1. Quartal");
+        } else if(monat.equals("Juni")) {
+            System.out.println("2. Quartal");
+        } else if(monat.equals("Dezember")) {
+            System.out.println("4. Quartal");
         } else {
-            System.out.println("Kein Schaltjahr");
+            System.out.println("Unbekannt");
         }
     }
 }
+
