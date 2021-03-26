@@ -32,11 +32,14 @@ public class Main {
         // float e = a * c;
         // float h = a * b + c * d;
         // int f = a + b + c + h;
-        // Tipp: Achte auf korrekte Typkonvertierung.
+        
+        // Tipps: Achte auf korrekte Typkonvertierung.
         // Ein float kann nach int folgendermaßen konvertiert werden:
         int g = (int) c;
         System.out.println(g);
-
+	// Ein String kann folgendermaßen zu einem Float konvertiert werden:
+	String testString = "243.2";
+	float testFloat=Float.parseFloat(testString);  
 
         ////// Exercise 3:
         System.out.println("##### Exercise 3");
