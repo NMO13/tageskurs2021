@@ -14,4 +14,8 @@ public class BeerBicycle extends WheeledVehicle {
     public String getType() {
         return type;
     }
+
+    public void maintainance() {
+        System.out.println("Repair BeerBicycle");
+    }
 }

@@ -9,4 +9,14 @@ public class LKW extends WheeledVehicle {
         super(3, weight, 8, false);
         this.loadCapacity = loadCapacity;
     }
+
+    public void maintainance() {
+        changeWheel();
+        super.changeWheel();
+        System.out.println("Repair LKW");
+    }
+
+    public void changeWheel() {
+        System.out.println("Change wheel in LKW");
+    }
 }

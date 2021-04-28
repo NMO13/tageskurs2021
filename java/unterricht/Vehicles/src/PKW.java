@@ -9,4 +9,12 @@ public class PKW extends WheeledVehicle{
     public int getNumSeats() {
         return numSeats;
     }
+
+    // overriding a method means:
+    // same return value
+    // same name
+    // same parameter types
+    public void changeWheel() {
+        System.out.println("Change wheel in PKW.");
+    }
 }

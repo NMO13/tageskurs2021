@@ -12,6 +12,6 @@ public class Vehicle {
     }
 
     public void maintainance() {
-
+        System.out.println("Repair vehicle");
     }
 }

@@ -27,6 +27,11 @@ public class WheeledVehicle extends Vehicle {
     }
 
     protected void changeWheel() {
+        System.out.println("Changing wheels.");
+    }
 
+    // method overriding
+    public void maintainance() {
+        changeWheel();
     }
 }
