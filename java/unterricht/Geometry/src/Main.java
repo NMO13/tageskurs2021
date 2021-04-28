@@ -1,8 +1,19 @@
 import addieren.*;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Main {
-    public static void main(String[] args) {
-        Point[] points = new Point[8];
+    public static void main(String[] args) throws Exception {
+        //createExampleWindow();
+
+
+        int numPoints = 8;
+        Point[] points = new Point[numPoints];
+        for(int i = 0; i < points.length; i++) {
+            Point p = new Point(i+3, i*i+4);
+            points[i] = p;
+        }
 
         // Polygon anlegen
         Polygon polygon1 = new Polygon(points);
@@ -10,8 +21,21 @@ public class Main {
         System.out.println(x);
 
         // Triangle anlegen
+        points = new Point[3];
+        points[0] = new Point(0, 0);
+        points[1] = new Point(10, 0);
+        points[2] = new Point(0, 10);
+        System.out.println(points[0]);
         Triangle triangle = new Triangle(points);
         triangle.computeArea();
+        System.out.println(triangle.getPointsAsString());
+
+        // Adresse von 8 Punkten von Polygon wieder in Variable points speichern
+        points = polygon1.getPoints();
+        System.out.println(points[3]);
+
+
+        // Anderes Beispiel
 
         A a = new A();
         // geht nicht: a.setNumber(40);
@@ -47,5 +71,16 @@ public class Main {
     public static void addieren(A aObjekt) {
         System.out.println("Mach was cooles");
         aObjekt.addieren(4, 6);
+    }
+
+    private static void createExampleWindow() {
+        JFrame frame = new JFrame("Simple GUI");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JLabel textLabel = new JLabel("I'm a label in the window",SwingConstants.CENTER);
+        textLabel.setPreferredSize(new Dimension(300, 100));
+        frame.getContentPane().add(textLabel, BorderLayout.CENTER);       //Display the window.
+        frame.setLocationRelativeTo(null);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

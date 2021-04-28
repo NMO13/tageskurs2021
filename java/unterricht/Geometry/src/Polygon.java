@@ -3,9 +3,15 @@ public class Polygon extends Shape {
         super(points);
     }
 
-    public float computeArea() {
-        return 0.0f;
+    @Override
+    float computeArea() {
+        /*
+        Nicht korrekte Implementierung der Polygonsumme
+         */
+        float sum = 0;
+        for(Point p : this.getPoints()) {
+            sum += p.x * p.y;
+        }
+        return sum;
     }
-
-
 }

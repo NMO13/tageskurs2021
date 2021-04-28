@@ -1,4 +1,6 @@
-public class Shape {
+import java.util.Arrays;
+
+public abstract class Shape {
     private Point[] points;
 
     public Shape(Point[] points) {
@@ -7,5 +9,11 @@ public class Shape {
 
     public Point[] getPoints() {
         return points;
+    }
+
+    abstract float computeArea();
+
+    public String getPointsAsString() {
+        return Arrays.toString(this.points);
     }
 }
