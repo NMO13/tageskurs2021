@@ -1,18 +1,10 @@
-public class Polygon {
-    private Point[] points;
-
-
+public class Polygon extends Shape {
     public Polygon(Point[] points) {
-        this.points = points;
+        super(points);
     }
 
     public float computeArea() {
         return 0.0f;
-    }
-
-    // getter for points
-    public Point[] getPoints() {
-        return points;
     }
 
 
