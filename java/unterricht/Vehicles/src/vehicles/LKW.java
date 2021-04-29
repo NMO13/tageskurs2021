@@ -1,3 +1,5 @@
+package vehicles;
+
 public class LKW extends WheeledVehicle {
     private float loadCapacity;
 
@@ -10,13 +12,19 @@ public class LKW extends WheeledVehicle {
         this.loadCapacity = loadCapacity;
     }
 
+    public void drive(int km) {
+        System.out.println("vehicles.LKW drives.");
+        //totalKilometers = totalKilometers + km;
+        totalKilometers += km;
+    }
+
     public void maintainance() {
         changeWheel();
         super.changeWheel();
-        System.out.println("Repair LKW");
+        System.out.println("Repair vehicles.LKW");
     }
 
     public void changeWheel() {
-        System.out.println("Change wheel in LKW");
+        System.out.println("Change wheel in vehicles.LKW");
     }
 }

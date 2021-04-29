@@ -1,3 +1,5 @@
+package vehicles;
+
 public class BeerBicycle extends WheeledVehicle {
     private final String MOUNTAINBIKE = "Mountainbike";
     private final String CITYBIKE = "Citybike";
@@ -16,6 +18,12 @@ public class BeerBicycle extends WheeledVehicle {
     }
 
     public void maintainance() {
-        System.out.println("Repair BeerBicycle");
+        System.out.println("Repair vehicles.BeerBicycle");
+    }
+
+    public void drive(int km) {
+        System.out.println("Beerbicycle drives");
+        //totalKilometers = totalKilometers + km;
+        totalKilometers += km;
     }
 }

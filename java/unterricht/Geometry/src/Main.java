@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main {
+    public static void rotateShape(Shape p) {
+        p.rotate(56);
+    }
+
     public static void main(String[] args) throws Exception {
         //createExampleWindow();
 
@@ -19,6 +23,8 @@ public class Main {
         Polygon polygon1 = new Polygon(points);
         float x = polygon1.computeArea();
         System.out.println(x);
+        polygon1.move(4, 5);
+        polygon1.rotate(45);
 
         // Triangle anlegen
         points = new Point[3];
@@ -33,6 +39,14 @@ public class Main {
         // Adresse von 8 Punkten von Polygon wieder in Variable points speichern
         points = polygon1.getPoints();
         System.out.println(points[3]);
+
+        // Linie
+        Line line = new Line(points[0], points[2]);
+
+        // Kreis
+        Circle circle = new Circle(points);
+        System.out.println(circle.getPoints());
+        circle.computeArea();
 
 
         // Anderes Beispiel

@@ -1,3 +1,5 @@
+package vehicles;
+
 public class MagneticTrain extends Vehicle {
     private float powerConsumption;
 
@@ -7,5 +9,11 @@ public class MagneticTrain extends Vehicle {
     }
     public float getPowerConsumption() {
         return powerConsumption;
+    }
+
+    public void drive(int km) {
+        System.out.println("Magnetic train hovers");
+        //totalKilometers = totalKilometers + km;
+        totalKilometers += km;
     }
 }

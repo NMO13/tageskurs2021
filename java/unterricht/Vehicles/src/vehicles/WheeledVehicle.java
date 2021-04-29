@@ -1,4 +1,6 @@
-public class WheeledVehicle extends Vehicle {
+package vehicles;
+
+public abstract class WheeledVehicle extends Vehicle {
     protected int numWheels;
     protected float wheelDiameter;
     protected float wheelWheight;

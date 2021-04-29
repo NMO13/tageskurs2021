@@ -1,3 +1,5 @@
+package vehicles;
+
 public class PKW extends WheeledVehicle{
     private int numSeats;
 
@@ -15,6 +17,12 @@ public class PKW extends WheeledVehicle{
     // same name
     // same parameter types
     public void changeWheel() {
-        System.out.println("Change wheel in PKW.");
+        System.out.println("Change wheel in vehicles.PKW.");
+    }
+
+    public void drive(int km) {
+        System.out.println("vehicles.PKW drives.");
+        //totalKilometers = totalKilometers + km;
+        totalKilometers += km;
     }
 }

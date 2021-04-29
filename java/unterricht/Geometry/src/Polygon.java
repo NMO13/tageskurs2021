@@ -1,3 +1,5 @@
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+
 public class Polygon extends Shape {
     public Polygon(Point[] points) {
         super(points);
@@ -13,5 +15,13 @@ public class Polygon extends Shape {
             sum += p.x * p.y;
         }
         return sum;
+    }
+
+    public void move(int x, int y) {
+
+    }
+
+    public void rotate(int degree) {
+
     }
 }
