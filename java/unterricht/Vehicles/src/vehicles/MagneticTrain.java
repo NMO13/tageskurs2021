@@ -1,6 +1,6 @@
 package vehicles;
 
-public class MagneticTrain extends Vehicle {
+public class MagneticTrain extends Vehicle implements Electric{
     private float powerConsumption;
 
     public MagneticTrain(int numPersons, float weight, float powerConsumption) {
@@ -15,5 +15,10 @@ public class MagneticTrain extends Vehicle {
         System.out.println("Magnetic train hovers");
         //totalKilometers = totalKilometers + km;
         totalKilometers += km;
+    }
+
+    @Override
+    public void batteryReplacement() {
+        System.out.println("Replace battery.");
     }
 }

@@ -2,6 +2,7 @@ import addieren.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
 
 public class Main {
     public static void rotateShape(Shape p) {
@@ -36,6 +37,11 @@ public class Main {
         triangle.computeArea();
         System.out.println(triangle.getPointsAsString());
 
+        // Noch ein Dreieck anlegen
+        Triangle triangle1 = new Triangle(points[0],points[1],points[2]);
+        triangle1.computeArea();
+        System.out.println(triangle1.getPointsAsString());
+
         // Adresse von 8 Punkten von Polygon wieder in Variable points speichern
         points = polygon1.getPoints();
         System.out.println(points[3]);
@@ -47,6 +53,17 @@ public class Main {
         Circle circle = new Circle(points);
         System.out.println(circle.getPoints());
         circle.computeArea();
+
+        Scanner scanner = new Scanner(System.in);
+        int zahl = scanner.nextInt();
+        // Shapes rotieren
+        rotateShape(triangle);
+        if (zahl > 3)
+         rotateShape(polygon1);
+        else {
+            rotateShape(line);
+            rotateShape(circle);
+        }
 
 
         // Anderes Beispiel

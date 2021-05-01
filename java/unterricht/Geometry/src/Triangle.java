@@ -9,4 +9,8 @@ public class Triangle extends Polygon{
         // super bezieht sich auf Parent Klasse (in dem Fall Polygon)
     }
 
+    public Triangle(Point p1, Point p2, Point p3) {
+        super(new Point[]{p1, p2, p3});
+    }
+
 }

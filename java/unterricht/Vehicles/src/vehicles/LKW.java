@@ -1,6 +1,6 @@
 package vehicles;
 
-public class LKW extends WheeledVehicle {
+public class LKW extends Fueling {
     private float loadCapacity;
 
     public float getLoadCapacity() {
@@ -8,6 +8,7 @@ public class LKW extends WheeledVehicle {
     }
 
     public LKW(float loadCapacity, float weight) {
+        // super(weight, 8, 100, 30);
         super(3, weight, 8, false);
         this.loadCapacity = loadCapacity;
     }
@@ -26,5 +27,15 @@ public class LKW extends WheeledVehicle {
 
     public void changeWheel() {
         System.out.println("Change wheel in vehicles.LKW");
+    }
+
+    @Override
+    void fuel(int liter) {
+
+    }
+
+    @Override
+    public int getPressure() {
+        return 0;
     }
 }

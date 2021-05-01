@@ -1,6 +1,6 @@
 package vehicles;
 
-public class PKW extends WheeledVehicle{
+public class PKW extends Fueling {
     private int numSeats;
 
     public PKW(int numPersons, float weight, boolean isAutomatic, int numSeats) {
@@ -21,8 +21,19 @@ public class PKW extends WheeledVehicle{
     }
 
     public void drive(int km) {
+        this.setPosition(km);
         System.out.println("vehicles.PKW drives.");
         //totalKilometers = totalKilometers + km;
         totalKilometers += km;
+    }
+
+    @Override
+    void fuel(int liter) {
+
+    }
+
+    @Override
+    public int getPressure() {
+        return 0;
     }
 }

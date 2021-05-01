@@ -26,4 +26,9 @@ public class BeerBicycle extends WheeledVehicle {
         //totalKilometers = totalKilometers + km;
         totalKilometers += km;
     }
+
+    @Override
+    public int getPressure() {
+        return 0;
+    }
 }

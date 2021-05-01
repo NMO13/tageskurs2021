@@ -1,6 +1,6 @@
 package vehicles;
 
-public abstract class WheeledVehicle extends Vehicle {
+public abstract class WheeledVehicle extends Vehicle implements TirePressure {
     protected int numWheels;
     protected float wheelDiameter;
     protected float wheelWheight;
