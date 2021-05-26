@@ -9,7 +9,7 @@ public class Game {
 
         Player currentPlayer = player1;
         // game loop
-        while(!board.gameOver()) {
+        while(!board.gameOver(currentPlayer.getColor())) {
             board.draw();
             Move move = currentPlayer.chooseMove(board);
             board.executeMove(move);

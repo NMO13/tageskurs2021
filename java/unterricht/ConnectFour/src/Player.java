@@ -4,4 +4,5 @@ enum Color {
 }
 public interface Player {
     public Move chooseMove(Board board);
+    public Color getColor();
 }
