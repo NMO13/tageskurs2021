@@ -15,8 +15,8 @@ public class Game {
             board.executeMove(move);
             history.add(move);
             currentPlayer = switchPlayer(currentPlayer, player1, player2);
-
         }
+        board.draw();
         Color winner = board.getWinner();
         printWinner(winner);
     }

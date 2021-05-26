@@ -12,7 +12,7 @@ public class HumanPlayer implements Player {
         while(column < 0 || column > 6) {
             System.out.println("Choose column (0-6): ");
             column = scanner.nextInt();
-            Move[] validMoves = board.getValidMoves();
+            int[] validMoves = board.getValidMoves();
             // todo check if column is in validMoves
             // if no then let the user try again
         }
