@@ -1,24 +1,34 @@
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Game {
     LinkedList<Move> history = new LinkedList<>();
     void play() {
-        Board board = new Board();
-        Player player1 = new HumanPlayer(Color.RED);
-        Player player2 = new HumanPlayer(Color.YELLOW);
+        boolean playAnotherGame;
+        do {
+            playAnotherGame = false;
+            Board board = new Board();
+            Player player1 = new HumanPlayer(Color.RED);
+            Player player2 = new HumanPlayer(Color.YELLOW);
 
-        Player currentPlayer = player1;
-        // game loop
-        while(!board.gameOver(currentPlayer.getColor())) {
+            Player currentPlayer = player2;
+            // game loop
+            while (!board.gameOver(currentPlayer.getColor())) {
+                board.draw();
+                currentPlayer = switchPlayer(currentPlayer, player1, player2);
+                Move move = currentPlayer.chooseMove(board);
+                board.executeMove(move);
+                history.add(move);
+            }
             board.draw();
-            Move move = currentPlayer.chooseMove(board);
-            board.executeMove(move);
-            history.add(move);
-            currentPlayer = switchPlayer(currentPlayer, player1, player2);
-        }
-        board.draw();
-        Color winner = board.getWinner();
-        printWinner(winner);
+            Color winner = board.getWinner();
+            printWinner(winner);
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Do you want to play another game? (y/n) ");
+            String result = scanner.nextLine();
+            if (result.equals("y"))
+                playAnotherGame = true;
+        } while(playAnotherGame);
     }
 
     private Player switchPlayer(Player currentPlayer, Player player1, Player player2) {

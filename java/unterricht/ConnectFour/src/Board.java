@@ -1,8 +1,6 @@
 public class Board {
     Color[][] board = new Color[6][7];
-    public void reset() {
-
-    }
+    Color winner;
 
     public void executeMove(Move move) {
         int x = 0;
@@ -38,6 +36,7 @@ public class Board {
                         board[row][col+1] == currentColor &&
                         board[row][col+2] == currentColor &&
                         board[row][col+3] == currentColor){
+                    winner = currentColor;
                     return true;
                 }
             }
@@ -49,6 +48,7 @@ public class Board {
                         board[row+1][col] == currentColor &&
                         board[row+2][col] == currentColor &&
                         board[row+3][col] == currentColor){
+                    winner = currentColor;
                     return true;
                 }
             }
@@ -60,6 +60,7 @@ public class Board {
                         board[row-1][col+1] == currentColor &&
                         board[row-2][col+2] == currentColor &&
                         board[row-3][col+3] == currentColor){
+                    winner = currentColor;
                     return true;
                 }
             }
@@ -71,6 +72,7 @@ public class Board {
                         board[row+1][col+1] == currentColor &&
                         board[row+2][col+2] == currentColor &&
                         board[row+3][col+3] == currentColor){
+                    winner = currentColor;
                     return true;
                 }
             }
@@ -80,7 +82,7 @@ public class Board {
     }
 
     public Color getWinner() {
-        return null;
+        return winner;
     }
 
     public void draw() {
