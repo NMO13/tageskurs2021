@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p>First paragraph</p>
+    <script>
+        d3.select("p").html("<span>This is new inner HTML</span>");
+        <!-- equivalent to ... -->
+        d3.select("p").append("span").text("This is new inner HTML");
+    </script>
+</body>
+</html>

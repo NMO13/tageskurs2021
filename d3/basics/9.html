@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div style="border:1px solid">
+        <p>First paragraph.</p>
+    </div>
+    <svg transform="translate(0, 80)">
+        <g class="item1" transform="translate(0, 80)">
+           <circle r="40" />
+        </g>
+        <g class="item" transform="translate(120, 80)">
+           <circle r="40" />
+        </g>
+        <g class="item" transform="translate(240, 80)">
+           <circle r="40" />
+        </g>
+    </svg>
+    <script>
+    	d3.select("div").append("p");
+        d3.select("div").insert("p").text("Second paragraph.");
+        
+        d3.selectAll("g.item1").append("text").text("A").style('fill', 'orange');
+        
+        d3.selectAll("g.item").insert("text", "circle").text("A").style('fill', 'orange');
+    </script>
+</body>
+</html>
