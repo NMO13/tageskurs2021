@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<body>
+<svg width="960" height="500"></svg>
+<script>
+var origin = [480, 300], j = 10, scale = 20, scatter = [], yLine = [], xGrid = [], beta = 0, alpha = 0, key = function(d){ return d.id; }, startAngle = Math.PI/4;
+
+  var grid3d = d3._3d()
+        .shape('GRID', 20)
+        .origin(origin)
+        .rotateY( startAngle)
+        .rotateX(-startAngle)
+        .scale(scale);
+        
+  var point3d = d3._3d()
+        .x(function(d){ return d.x; })
+        .y(function(d){ return d.y; })
+        .z(function(d){ return d.z; })
+        .origin(origin)
+        .rotateY( startAngle)
+        .rotateX(-startAngle)
+        .scale(scale);
+  var svg = d3.select('svg').append('g');
+
+        
+       function processData(xGrid_data, tt){
+
+        /* ----------- GRID ----------- */
+        
+
+        var xGrid = svg.selectAll('path.grid').data(xGrid_data, key);
+
+        xGrid
+            .enter()
+            .append('path')
+            .attr('class', '_3d grid')
+            .merge(xGrid)
+            .attr('stroke', 'black')
+            .attr('stroke-width', 0.3)
+            .attr('fill', function(d){ return d.ccw ? 'lightgrey' : '#717171'; })
+            .attr('fill-opacity', 0.9)
+            .attr('d', grid3d.draw);
+
+        xGrid.exit().remove();
+        }
+        
+        var cnt = 0;
+        xGrid = [];
+        for(var z = -j; z < j; z++){
+            for(var x = -j; x < j; x++){
+                xGrid.push([x, 1, z]);
+            }
+        }
+        
+       processData(grid3d(xGrid));
+
+</script>

@@ -1,0 +1,38 @@
+<html>
+<head>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <script>
+    var data = [100, 50, 200, 60, 4, 12];
+    var scale = d3.scaleLinear()
+                .domain([d3.min(data), d3.max(data)])
+                .range([5, 80]);
+    
+    var width = 600,
+        barWidth = 20
+        
+    var svg = d3.select("body")
+              .append("svg")
+              .attr("width", width)
+              .attr("height", scale(d3.max(data)));
+    
+    var g = svg.selectAll("g")
+            .data(data)
+            .enter()
+            .append("g")
+            .attr("transform", function(d, i) {
+            	return "translate(" + i * barWidth + ",0)";
+            });
+            
+    g.append("rect")
+     .attr("width", barWidth)
+     .attr("height", function(d) {
+         return scale(d);
+     })
+     .attr("y", function(d) {
+        return scale(d3.max(data)) - scale(d);
+     });
+  </script>
+</body>
+</html>

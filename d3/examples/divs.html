@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+<script>
+    var size = [[30, 60], [40, 60], [50, 30], [60, 30]];
+    
+    
+    d3.selectAll("div").data(size).style("width", function(d, i) {
+    	return d[0] + "px";
+    }).style("height", function(d, i) {
+    	return d[1] + "px";
+    }).style('background-color', "red").text(function(d, i) {
+        return d[0] + "x" + d[1];
+    });
+</script>
+</body>
+</html>
